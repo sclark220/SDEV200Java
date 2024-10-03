@@ -31,7 +31,7 @@ public class App extends Application
         return originalPane.getChildren().stream().map(n -> (Sprite)n).collect(Collectors.toList());
     }
 
-    private void update()
+    private void update() // work in progress,I  am following some tutorials to get collision and smoother moving sprites.
     {
         // sprites().forEach(s -> 
         // {
@@ -63,7 +63,7 @@ public class App extends Application
         // });
     }
 
-    private void nextLevel()
+    private void nextLevel() // makes a bunch of squares that will be enemies
     {
         for(int i = 0; i < 5; i++)
         {
@@ -97,14 +97,14 @@ public class App extends Application
         mainMenuPane.setPrefSize(1280, 720);
 
         Label headerText = new Label("This program will be a game!");
-        headerText.layoutXProperty().bind(mainMenuPane.widthProperty().subtract(headerText.widthProperty()).divide(2)); // set to be the center of the screen
+        headerText.layoutXProperty().bind(mainMenuPane.widthProperty().subtract(headerText.widthProperty()).divide(2)); // set to be the center of the screen on X axis
         headerText.setFont(titleFont);
 
         Button playGameButton = new Button();
         playGameButton.setText("PLAY!");
         playGameButton.setPrefSize(100, 50);
-        playGameButton.layoutXProperty().bind(mainMenuPane.widthProperty().subtract(playGameButton.widthProperty()).divide(2));
-        playGameButton.layoutYProperty().bind(mainMenuPane.heightProperty().subtract(playGameButton.heightProperty()).divide(2));
+        playGameButton.layoutXProperty().bind(mainMenuPane.widthProperty().subtract(playGameButton.widthProperty()).divide(2)); // set to be the center of the screen on X axis
+        playGameButton.layoutYProperty().bind(mainMenuPane.heightProperty().subtract(playGameButton.heightProperty()).divide(2)); // set to be the center of the screen on Y axis
         playGameButton.setOnAction(e -> primaryStage.setScene(gameScene));
 
         mainMenuPane.getChildren().addAll(headerText, playGameButton);
