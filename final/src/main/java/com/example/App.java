@@ -114,7 +114,7 @@ public class App extends Application
 
         originalPane.getChildren().addAll(player);
 
-        AnimationTimer timer = new AnimationTimer()
+        AnimationTimer timer = new AnimationTimer() // Does not work, it's part of the tutorial I am using to smooth the movement of sprites.
         {
             public void handle(long now)
             {
