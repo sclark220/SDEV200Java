@@ -247,7 +247,7 @@ public class App extends Application
         {
             switch (e.getCode())
             {
-                case LEFT:
+                case LEFT: // fallthrough lets us have both arrow keys and the WASD keys as out movement, how cool.
                 case A:
                     player.moveLeft();
                     break;
