@@ -28,7 +28,7 @@ public class App extends Application
     private boolean isEndTextShowing = false;
 
     private double t = 0; // for time, for enemy attacks
-    private double timerTime = 0; // for the time test
+    private double timerTime = 0; // for the time text
     private DecimalFormat numberFormat = new DecimalFormat(".#"); // used to format the timer
 
     private Font titleFont = Font.font("Times", FontWeight.EXTRA_BOLD, 42); // set title font and size
@@ -37,7 +37,7 @@ public class App extends Application
     private Label timerText = new Label("Time: " + t);
     private Label gameOverText = new Label("GameOver!");
 
-    private Sprite player = new Sprite(615, 615, 50, 50, "player", Color.PURPLE);
+    private Sprite player = new Sprite(615, 615, 50, 50, "player", Color.PURPLE); // create a sprite that we will control. Giving it a type of player
 
     // enemy stats
     private int numberOfEnemies = 26;
@@ -281,7 +281,7 @@ public class App extends Application
     private static class Sprite extends Rectangle
     {
         boolean isDead = false;
-        final String type;
+        final String type; // used to from player, enemy, and enemyAttackSprite
 
         Sprite(int x, int y, int w, int h, String type, Color color)
         {
@@ -305,7 +305,7 @@ public class App extends Application
                 setTranslateX(getTranslateX() + 10); // move right 10 pixels
             }
         }
-        void moveUp() // no longer needed player can only move sidways
+        void moveUp() // no longer needed player can only move sideways
         {   
             if (this.getTranslateY() > 0)
             {
